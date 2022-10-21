@@ -1,6 +1,6 @@
 const vigenere = require('./modules/vigenere/vigenere');
 const settings = require('./settings');
-const message = require('./modules/message/message');
+const filesWork = require('./modules/files/filesWork');
 const commonModule = require('./modules/commonModule');
 
 
@@ -8,7 +8,7 @@ const SQUEARE_VIGENERE = vigenere.getSquareVigenere();
 const { SECRET_KEY } = settings;
  
 const a = 4;
-const messageText =  message.readMessage();
+const messageText = filesWork.readMessage();
 
 if (messageText === null) {
     console.error('Ошибка при чтение файла сообщения');
@@ -20,3 +20,5 @@ const messageSecretKeyCipher = commonModule.createMessageSecretKeyCipher(message
 const chiphertext = commonModule.getChiphertext(messageText, messageSecretKeyCipher, SQUEARE_VIGENERE);
 
 console.log(chiphertext);
+
+filesWork.writeChiphertext(chiphertext);
