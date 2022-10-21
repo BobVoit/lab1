@@ -4,10 +4,9 @@ const message = require('./modules/message/message');
 const commonModule = require('./modules/commonModule');
 
 
-const QUERE_VIGENERE = vigenere.getQueryVigenere();
+const SQUEARE_VIGENERE = vigenere.getSquareVigenere();
 const { SECRET_KEY } = settings;
-
-process.argv 
+ 
 const a = 4;
 const messageText =  message.readMessage();
 
@@ -18,4 +17,6 @@ if (messageText === null) {
 
 const messageSecretKeyCipher = commonModule.createMessageSecretKeyCipher(messageText, SECRET_KEY);
 
-let g = 5;
+const chiphertext = commonModule.getChiphertext(messageText, messageSecretKeyCipher, SQUEARE_VIGENERE);
+
+console.log(chiphertext);

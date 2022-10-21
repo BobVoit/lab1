@@ -27,3 +27,26 @@ module.exports.createMessageSecretKeyCipher = (message, secretKey) => {
 
     return result;
 }
+
+
+/**
+ * 
+ * @param {string} message 
+ * @param {string} secretKey 
+ * @param {array} squareVigenere 
+ */
+module.exports.getChiphertext = (message, messageSecretKeyCipher, squareVigenere) => {
+
+    let result = "";
+
+    const lengthMessage = message.length;
+
+    for (let i = 0; i < lengthMessage; i++) {
+        const line = message[i];
+        const column = messageSecretKeyCipher[i];
+        const foundElement = squareVigenere.find(element => element.line === line && element.column === column);
+        result += foundElement.value;
+    }
+
+    return result;
+}
