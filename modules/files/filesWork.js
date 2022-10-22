@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { PATH_TO_DIR, FILE_MESSAGE_NAME, FILE_CHIPHERTEXT_NAME } = require('../../settings');
+const { PATH_TO_DIR, FILE_MESSAGE_NAME, FILE_CHIPHERTEXT_NAME, FILE_DECRYPT_TEXT_NAME } = require('../../settings');
 
 
 /**
@@ -40,5 +40,17 @@ module.exports.readChiphertext = () => {
     } catch(e) {
         console.log('Error:', e.stack);
         return null;
+    }
+}
+
+/**
+ * 
+ * @param {*} text - записываемый текст
+ */
+ module.exports.writeDecryptText = (text) => {
+    try {  
+        fs.writeFileSync(`${PATH_TO_DIR}${'\\'}${FILE_DECRYPT_TEXT_NAME}`, text);
+    } catch(e) {
+        console.log('Error:', e.stack);
     }
 }

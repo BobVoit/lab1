@@ -18,3 +18,5 @@ const messageSecretKeyCipher = commonModule.createMessageSecretKeyCipher(chipher
 const message = commonModule.decipher(chiphertext, messageSecretKeyCipher, SQUEARE_VIGENERE);
 
 console.log(message);
+
+filesWork.writeDecryptText(message);
