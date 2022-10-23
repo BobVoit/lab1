@@ -7,7 +7,6 @@ const commonModule = require('./modules/commonModule');
 const SQUEARE_VIGENERE = vigenere.getSquareVigenere();
 const { SECRET_KEY } = settings;
  
-const a = 4;
 const messageText = filesWork.readMessage();
 
 if (messageText === null) {
