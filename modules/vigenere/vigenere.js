@@ -5,7 +5,6 @@ module.exports.getSquareVigenere = () => {
     const lengthArray = this.arrayRu.length;
     let startIndex = 0;
     for (let i = 0; i < lengthArray; i++) {
-        const line = [];
         let j = 0;
         let indexOfElement = startIndex;
         while (j < lengthArray) {
@@ -13,8 +12,6 @@ module.exports.getSquareVigenere = () => {
             if (indexOfElement === lengthArray) {
                 indexOfElement = 0;
             }
-
-            // line.push(this.arrayRu[indexOfElement]);
 
             const newElement = {
                 line: this.arrayRu[i],
@@ -27,7 +24,6 @@ module.exports.getSquareVigenere = () => {
             j++;
         }
         startIndex++;
-        // result.push(line);
     }
     return result;
 }
